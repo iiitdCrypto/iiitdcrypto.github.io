@@ -190,3 +190,80 @@ footer {
   color: #2e7d32;
   margin-top: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================= */
+/* 📱 MOBILE + TABLET SUPPORT */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+  /* HERO SECTION */
+  .hero-split {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-left img {
+    width: 220px;
+  }
+
+  /* NAVBAR STACK */
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* GRID → 1 COLUMN */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* SECTIONS PADDING */
+  section {
+    padding: 40px 20px;
+  }
+}
