@@ -5,6 +5,12 @@ body {
   color: #1b1b1b;
 }
 
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
 /* NAVBAR */
 nav {
   background-color: #ffffff;
@@ -134,8 +140,10 @@ footer {
 
 
 /* PAGE TITLE */
-.page-title {
-  padding: 40px 80px;
+.page-title,
+section {
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .page-title h1 {
