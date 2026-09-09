@@ -2,153 +2,228 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Team - SCL</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Team — Symmetric Cryptography Lab, IIIT Delhi</title>
+  <meta name="description" content="PhD students, project students, interns and collaborators of the Symmetric Cryptography Lab at IIIT Delhi.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav>
-  <div class="logo">
-    <img src="image.png" alt="SCL Logo">
-    <span>SCL</span>
-  </div>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-mark.png" alt="">
+      <span class="brand-text">
+        <span class="brand-name">Symmetric Cryptography Lab</span>
+        <span class="brand-sub">IIIT Delhi</span>
+      </span>
+    </a>
 
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="research.html">Research</a></li>
-    <!-- <li><a href="publications.html">Publications</a></li> -->
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+    <input type="checkbox" id="navToggle" class="nav-toggle">
+    <label for="navToggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
 
-<!-- PAGE TITLE -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="team.html" aria-current="page">Team</a></li>
+      <li><a href="research.html">Research</a></li>
+      <!-- <li><a href="publications.html">Publications</a></li> -->
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ PAGE TITLE ============ -->
 <section class="page-title">
-  <h1>Our Team</h1>
-</section>
-
-<!-- PhD Students -->
-<section>
-  <h2>PhD Students</h2>
-
-  <div class="grid-3">
-
-    <div class="profile-card">
-      <img src="images/student1.jpg">
-      <h3>Sarbani Sen</h3>
-      <p>Researching quantum cryptanalysis and Grover-based attacks..</p>
-    </div>
-
-    <div class="profile-card">
-      <img src="images/student2.jpg">
-      <h3>Anshika Arora</h3>
-      <p>Working on block cipher cryptanalysis and algebraic attacks</p>
-    </div>
-
-    <div class="profile-card">
-      <img src="images/student3.jpg">
-      <h3>Muthukkumar R</h3>
-      <p>Exploring Quantum cryptanalysis.</p>
-    </div>
-
+  <div class="shell">
+    <h1>Our Team</h1>
+    <p>Students, interns and collaborators working with the lab.</p>
   </div>
 </section>
 
-<!-- Project Students -->
-<section>
-  <h2>Project Students</h2>
-
-  <div class="grid-3">
-
-    <div class="profile-card">
-      <h3 class="project">Secure Platform for Communication</h3>
-      <p>Piyush Aggarwal, Aditya Singh, Arvind Dhavala</p> 
-      <p>IIIT Delhi · 3rd Year</p>
+<!-- ============ PhD STUDENTS ============ -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="rule"></div>
+      <h2>PhD Students</h2>
     </div>
 
-    <div class="profile-card">
-      <h3 class="project">Machine Learning based Identification of Classical Symetric Ciphhers</h3>
-      <p>Md. Kaif, Maulik Mahey, Sweta Snighdha, Dhruv Verma</p>
-      <p>IIIT Delhi · 4rd Year</p>
-    </div>
+    <div class="grid-3">
 
-  </div>
-
-</section>
-
-<!-- Interns -->
-<section>
-  <h2>IPs/RAs/Interns</h2>
-
-  <div class="grid-3">
-
-    <div class="profile-card">
-      <h3 class="project">IP: Performance Evaluation of Symmetric Ciphers in GPUs</h3>
-      <p>Sneha Agarwal</p>
-      <p >Aditya Gupta, Sahil Gupta</p>
-      <p>IIIT Delhi · 4rd Year</p>
-    </div>
-
-    <div class="profile-card">
-      <h3 class="project">Internship: Introductio to Quantum cryptanalysis</h3>
-      <p >Debasmi Basu</p>
-      <p>DU · 2nd Year</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- Collaborators -->
-<section>
-  <h2>Collaborators</h2>
-
-  <div class="grid-3">
-
-    <div class="profile-card">
-
-      <div class="img-container">
-        <img src="mustaf.jpg">
-        <div class="overlay">
-          <a href="https://sites.google.com/view/rahmanmustaf/home?authuser=1" target="_blank">🔗</a>  <!-- LinkedIn -->
-          <a href="https://scholar.google.com/citations?user=aGkO9kYAAAAJ&hl=en" target="_blank">📄</a>  <!-- Scholar -->
+      <div class="profile-card">
+        <div class="img-container">
+          <img src="assets/avatar-placeholder.png" alt="Sarbani Sen">
         </div>
+        <h3>Sarbani Sen</h3>
+        <p>Researching quantum cryptanalysis and Grover-based attacks.</p>
       </div>
-      
-      <!-- <img src="mustaf.jpg"> -->
-      <h3>
-        Dr. Mostafizar Rahman
-        </a>
-      </h3>
-      <p>Post-Doc, NTU Singapore</p>
-    </div>
 
-    <div class="profile-card">
-      <div class="img-container">
-        <img src="sagnik.jpg">
-        <div class="overlay">
-          <a href="https://chatsagnik.github.io/" target="_blank">🔗</a>  <!-- LinkedIn -->
-          <a href="https://scholar.google.com/citations?user=TVzLYlAAAAAJ&hl=en" target="_blank">📄</a>  <!-- Scholar -->
+      <div class="profile-card">
+        <div class="img-container">
+          <img src="assets/avatar-placeholder.png" alt="Anshika Arora">
         </div>
+        <h3>Anshika Arora</h3>
+        <p>Working on block cipher cryptanalysis and algebraic attacks.</p>
       </div>
-      <!-- <img src="sagnik.jpg"> -->
-      <h3>
-          Dr. Sagnik Chatterjee
-        </a> 
-      </h3>
-      <p>Post-Doc, STCS, TIFR Mumbai</p>
-    </div>
 
+      <div class="profile-card">
+        <div class="img-container">
+          <img src="assets/avatar-placeholder.png" alt="Muthukkumar R">
+        </div>
+        <h3>Muthukkumar R</h3>
+        <p>Exploring quantum cryptanalysis.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2026 Sγmmετrιc Crγρτοgяαphy Lαβ</p>
+<!-- ============ PROJECT STUDENTS ============ -->
+<section class="section tinted">
+  <div class="shell">
+    <div class="section-head">
+      <div class="rule"></div>
+      <h2>Project Students</h2>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="profile-card">
+        <h3 class="project">Secure Platform for Communication</h3>
+        <p>Piyush Aggarwal, Aditya Singh, Arvind Dhavala</p>
+        <p>IIIT Delhi · 3rd Year</p>
+      </div>
+
+      <div class="profile-card">
+        <h3 class="project">Machine Learning based Identification of Classical Symmetric Ciphers</h3>
+        <p>Md. Kaif, Maulik Mahey, Sweta Snighdha, Dhruv Verma</p>
+        <p>IIIT Delhi · 4th Year</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ IPs / RAs / INTERNS ============ -->
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div class="rule"></div>
+      <h2>IPs / RAs / Interns</h2>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="profile-card">
+        <h3 class="project">IP: Performance Evaluation of Symmetric Ciphers on GPUs</h3>
+        <p>Sneha Agarwal</p>
+        <p>Aditya Gupta, Sahil Gupta</p>
+        <p>IIIT Delhi · 4th Year</p>
+      </div>
+
+      <div class="profile-card">
+        <h3 class="project">Internship: Introduction to Quantum Cryptanalysis</h3>
+        <p>Debasmi Basu</p>
+        <p>DU · 2nd Year</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLLABORATORS ============ -->
+<section class="section tinted">
+  <div class="shell">
+    <div class="section-head">
+      <div class="rule"></div>
+      <h2>Collaborators</h2>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="profile-card">
+        <div class="img-container">
+          <img src="mustaf.jpg" alt="Dr. Mostafizar Rahman">
+          <div class="overlay">
+            <a href="https://sites.google.com/view/rahmanmustaf/home?authuser=1" target="_blank" rel="noopener" title="Homepage">🔗</a>
+            <a href="https://scholar.google.com/citations?user=aGkO9kYAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar">📄</a>
+          </div>
+        </div>
+        <h3>Dr. Mostafizar Rahman</h3>
+        <p>Post-Doc, NTU Singapore</p>
+      </div>
+
+      <div class="profile-card">
+        <div class="img-container">
+          <img src="sagnik.jpg" alt="Dr. Sagnik Chatterjee">
+          <div class="overlay">
+            <a href="https://chatsagnik.github.io/" target="_blank" rel="noopener" title="Homepage">🔗</a>
+            <a href="https://scholar.google.com/citations?user=TVzLYlAAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar">📄</a>
+          </div>
+        </div>
+        <h3>Dr. Sagnik Chatterjee</h3>
+        <p>Post-Doc, STCS, TIFR Mumbai</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="shell">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo-mark.png" alt="">
+          <span>
+            <strong>Symmetric Cryptography Lab</strong>
+            <span class="brand-sub">IIIT Delhi</span>
+          </span>
+        </div>
+        <p>Design and security analysis of symmetric-key cryptographic primitives.</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>A-503, R&amp;D Block<br>IIIT Delhi, Okhla Phase III<br>New Delhi 110020, India</p>
+        <p><a href="mailto:ravi.anand@iiitd.ac.in" style="color:#b9c2d6">ravi.anand@iiitd.ac.in</a></p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="team.html">Team</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://iiitd.ac.in" target="_blank" rel="noopener">IIIT Delhi</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Symmetric Cryptography Lab, IIIT Delhi</span>
+      <span>सममित कूटलेखन अनुसंधान प्रकोष्ठ</span>
+    </div>
+
+  </div>
 </footer>
 
 </body>
