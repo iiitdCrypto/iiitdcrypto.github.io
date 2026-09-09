@@ -394,67 +394,101 @@ h1, h2, h3 {
   line-height: 1.6;
 }
 
-/* ---------- NEWS + PI SPLIT ---------- */
-.split {
+/* ---------- RESEARCH + NEWS ROW ---------- */
+.duo {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 46px;
-  align-items: start;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+.duo-side { display: flex; flex-direction: column; min-height: 0; }
+
+.section-head.compact { margin-bottom: 26px; }
+
+.stack { display: grid; gap: 16px; }
+
+/* compact horizontal card */
+.card-row {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 22px 24px;
+}
+
+.card-row .card-icon { flex: none; margin-bottom: 0; }
+.card-row h3 { margin-bottom: 6px; }
+
+/* ---------- AUTO-SCROLLING NEWS ---------- */
+.news-viewport {
+  position: relative;
+  flex: 0 1 auto;
+  max-height: 440px;   /* past this the list loops instead of growing the page */
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 6px 22px;
+  box-shadow: 0 10px 28px rgba(12,20,40,.05);
+  --news-duration: 30s;
+}
+
+/* too few items to loop: the box simply sizes to its content */
+.news-viewport.is-static { max-height: none; padding: 4px 22px; }
+
+/* soft fade at the top and bottom edges, only while looping */
+.news-viewport.is-scrolling::before,
+.news-viewport.is-scrolling::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 40px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.news-viewport.is-scrolling::before { top: 0; background: linear-gradient(#fff, rgba(255,255,255,0)); }
+.news-viewport.is-scrolling::after  { bottom: 0; background: linear-gradient(rgba(255,255,255,0), #fff); }
+
+.news-viewport.is-scrolling .news-track {
+  animation: newsScroll var(--news-duration) linear infinite;
+  will-change: transform;
+}
+
+.news-viewport.is-scrolling:hover .news-track,
+.news-viewport.is-scrolling:focus-within .news-track {
+  animation-play-state: paused;
+}
+
+@keyframes newsScroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
 }
 
 .news-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--line);
 }
 
 .news-list li {
-  display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 18px;
-  padding: 16px 2px;
+  padding: 15px 0;
   border-bottom: 1px solid var(--line);
   font-size: 15.5px;
-  align-items: baseline;
+  line-height: 1.5;
 }
+
+.news-list li:last-child { border-bottom: 0; }
 
 .news-date {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--gold-d);
-  white-space: nowrap;
-}
-
-/* PI card */
-.pi-card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px;
-  box-shadow: 0 10px 28px rgba(12,20,40,.05);
-}
-
-.pi-card .role {
+  display: block;
   font-family: var(--mono);
   font-size: 11.5px;
-  letter-spacing: .14em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--gold-d);
-  margin: 0 0 10px;
+  margin-bottom: 3px;
 }
-
-.pi-card h3 { font-size: 21px; margin-bottom: 4px; }
-
-.pi-card .affil {
-  color: var(--muted);
-  font-size: 14.5px;
-  margin: 0 0 16px;
-}
-
-.pi-card p { font-size: 15px; color: var(--muted); margin: 0 0 18px; }
 
 .link-row {
   display: flex;
@@ -479,7 +513,15 @@ h1, h2, h3 {
   background: #fffdf6;
 }
 
-/* ---------- PUBLICATIONS ---------- */
+/* ---------- PUBLICATIONS ----------
+   Not used on the home page. Kept ready for a future publications.html:
+     <ul class="pub-list">
+       <li>
+         <span class="pub-title">Title</span>
+         <span class="pub-meta"><span class="venue">Venue Year</span>Authors</span>
+       </li>
+     </ul>
+------------------------------------- */
 .pub-list {
   list-style: none;
   margin: 0 0 26px;
@@ -551,7 +593,8 @@ h1, h2, h3 {
   line-height: 1.55;
 }
 
-.join-cta {
+/* lab lead + get in touch, merged */
+.lead-card {
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.13);
   border-radius: var(--radius);
@@ -559,16 +602,40 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.join-cta .role {
+.lead-card .role {
   font-family: var(--mono);
   font-size: 11.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--gold-l);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
-.join-cta p { font-size: 15px; margin: 0 0 20px; }
+.lead-card h3 { font-size: 22px; color: #fff; margin-bottom: 6px; }
+
+.lead-card .affil {
+  font-size: 14.5px;
+  color: var(--muted-d) !important;
+  margin: 0 0 18px;
+}
+
+.lead-card .blurb { font-size: 15px; margin: 0 0 20px; }
+
+.lead-card .link-row { justify-content: center; margin-top: 18px; }
+
+.btn-block { width: 100%; justify-content: center; }
+
+.chip.on-dark {
+  color: #d6dced;
+  border-color: rgba(255,255,255,.2);
+  background: transparent;
+}
+
+.chip.on-dark:hover {
+  border-color: var(--gold-l);
+  color: var(--gold-l);
+  background: rgba(255,255,255,.05);
+}
 
 /* ---------- FOOTER ---------- */
 .site-footer {
@@ -721,7 +788,8 @@ h1, h2, h3 {
   .hero .shell { grid-template-columns: 1fr; gap: 40px; }
   .hero-art { order: -1; }
   .hero-art img { max-width: 240px; }
-  .split { grid-template-columns: 1fr; gap: 34px; }
+  .duo { grid-template-columns: 1fr; gap: 40px; }
+  .news-viewport { max-height: 340px; }
   .join { grid-template-columns: 1fr; gap: 32px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
@@ -756,7 +824,7 @@ h1, h2, h3 {
   .grid-4, .grid-3 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
 
-  .news-list li { grid-template-columns: 1fr; gap: 4px; }
+  .card-row { flex-direction: column; gap: 12px; }
   .hero-actions .btn { flex: 1 1 auto; justify-content: center; }
 }
 
