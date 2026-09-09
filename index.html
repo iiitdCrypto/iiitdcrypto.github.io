@@ -2,91 +2,308 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sγmmετrιc Crγρτοgяαphy Lαβ</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Symmetric Cryptography Lab — IIIT Delhi</title>
+  <meta name="description" content="The Symmetric Cryptography Lab at IIIT Delhi works on the design and security analysis of symmetric-key primitives: classical and quantum cryptanalysis, cipher design, and machine learning for cryptanalysis.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav>
-  <div class="logo">
-    <img src="image.png" alt="SCL Logo">
-    <span>SCL</span>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-mark.png" alt="">
+      <span class="brand-text">
+        <span class="brand-name">Symmetric Cryptography Lab</span>
+        <span class="brand-sub">IIIT Delhi</span>
+      </span>
+    </a>
+
+    <input type="checkbox" id="navToggle" class="nav-toggle">
+    <label for="navToggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="research.html">Research</a></li>
+      <!-- <li><a href="publications.html">Publications</a></li> -->
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="shell">
+
+    <div class="hero-copy">
+      <p class="eyebrow on-dark">IIIT Delhi · Computer Science</p>
+
+      <h1>
+        Symmetric
+        <span class="accent">Cryptography Lab</span>
+      </h1>
+
+      <p class="devanagari">सममित कूटलेखन अनुसंधान प्रकोष्ठ</p>
+
+      <p class="lead">
+        We study the design and security analysis of symmetric cryptographic primitives —
+        the structural properties of block and stream ciphers, and the cryptanalytic
+        techniques that break them.
+      </p>
+
+      <p class="lead">
+        Our work extends into quantum cryptanalysis, where we ask what quantum adversaries
+        genuinely change for symmetric-key security, and into machine learning methods that
+        widen the reach of classical attacks.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#research">Explore our research</a>
+        <a class="btn btn-ghost" href="#join">Join the lab</a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <img src="assets/logo-mark.png" alt="Symmetric Cryptography Lab emblem">
+    </div>
+
   </div>
-
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="research.html">Research</a></li>
-    <!-- <li><a href="publications.html">Publications</a></li> -->
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- ROW 1: Logo + About -->
-<section class="hero-split">
-
-  <div class="hero-left">
-    <img src="image.png" alt="SCL Logo">
-  </div>
-
-  <div class="hero-right">
-    <h1>Sγmmετrιc Crγρτοgяαphy Lαβ</h1>
-    <h3>सममित कूटलेखन अनुसंधान प्रकोष्ठ</h3>
-
-    <p>
-      The Symmetric Cryptography Lab focuses on the design and security analysis of symmetric cryptographic primitives.
-      Our research explores the structural properties of block and stream ciphers, with an emphasis on developing cryptanalytic techniques.
-    </p>
-
-    <p>
-      We also study quantum cryptanalysis to understand the impact of quantum adversaries on symmetric-key security.
-      Recently, we have started exploring the application of machine learning methods to cryptanalysis.
-    </p>
-  </div>
-
 </section>
 
-<!-- ROW 2: Research + News -->
-<section class="split-section">
+<!-- ============ RESEARCH AREAS ============ -->
+<section class="section" id="research">
+  <div class="shell">
 
-  <!-- LEFT: Research -->
-  <div class="left">
-    <h2>Research Areas</h2>
+    <div class="section-head">
+      <div class="rule"></div>
+      <p class="eyebrow">What we work on</p>
+      <h2>Research Areas</h2>
+      <p>Four threads that run through most of what the lab does, from classical attacks to learned ones.</p>
+    </div>
 
-    <div class="grid">
-      <div class="card">Classical Cryptanalysis</div>
-    <div class="card">Quantum Cryptanalysis</div>
-    <div class="card">Design of Symmetric Ciphers</div>
-    <div class="card">Machine Learning for Cryptanalysis</div>
+    <div class="grid-4">
+
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="12" r="4"/><path d="M12 12h9"/><path d="M17 12v4"/><path d="M20.5 12v3"/>
+          </svg>
+        </div>
+        <h3>Classical Cryptanalysis</h3>
+        <p>Differential, linear, algebraic and fault-based attacks on block and stream ciphers, and the security margins they expose.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="2.2"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4.4"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4.4" transform="rotate(60 12 12)"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4.4" transform="rotate(120 12 12)"/>
+          </svg>
+        </div>
+        <h3>Quantum Cryptanalysis</h3>
+        <p>Grover- and Simon-based attacks assessed at circuit level, so the cost of a quantum adversary is counted honestly rather than assumed.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.5 21 7l-9 4.5L3 7z"/><path d="M3 12l9 4.5L21 12"/><path d="M3 17l9 4.5L21 17"/>
+          </svg>
+        </div>
+        <h3>Design of Symmetric Ciphers</h3>
+        <p>New block and stream cipher constructions, including primitives built for homomorphic-encryption-friendly and low-multiplicative-depth settings.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="7" r="2"/><circle cx="19" cy="17" r="2"/>
+            <path d="M7 6.6 10.2 11M7 17.4 10.2 13M14 11.3 17.1 7.8M14 12.8 17.1 16.2"/>
+          </svg>
+        </div>
+        <h3>Machine Learning for Cryptanalysis</h3>
+        <p>Neural distinguishers and learned attack pipelines, and what they can tell us that hand-built distinguishers cannot.</p>
+      </article>
+
     </div>
   </div>
-
-  <!-- RIGHT: News -->
-<div class="right">
-  <h2>News & Updates</h2>
-
-  <div class="news-box">
-    <ul>
-      <li><strong>Mar 2026:</strong> Talk at XYZ Conference</li>
-      <!-- <li><strong>Feb 2026:</strong> Paper accepted at Crypto 2026</li> -->
-      <!-- <li><strong>Jan 2026:</strong> Grant awarded on Quantum Cryptanalysis</li> -->
-      <li><strong>Dec 2025:</strong> Invited lecture at ABC University</li>
-      <li><strong>Nov 2025:</strong> Workshop on ZKP at IIITD</li>
-    </ul>
-  </div>
-
-</div>
-
 </section>
-  
 
-<!-- Footer -->
-<footer>
-  <p>© 2026 Sγmmετrιc Crγρτοgяαphy Lαβ</p>
+<!-- ============ NEWS + LAB LEAD ============ -->
+<section class="section tinted">
+  <div class="shell split">
+
+    <div>
+      <div class="section-head" style="margin-bottom:24px">
+        <div class="rule"></div>
+        <p class="eyebrow">Latest</p>
+        <h2>News &amp; Updates</h2>
+      </div>
+
+      <!-- TODO (Ravi): replace the two placeholder entries below with real items -->
+      <ul class="news-list">
+        <li>
+          <span class="news-date">Mar 2026</span>
+          <span>Talk at XYZ Conference</span>
+        </li>
+        <li>
+          <span class="news-date">Dec 2025</span>
+          <span>Invited lecture at ABC University</span>
+        </li>
+        <li>
+          <span class="news-date">Nov 2025</span>
+          <span>Workshop on Zero-Knowledge Proofs at IIIT Delhi</span>
+        </li>
+      </ul>
+    </div>
+
+    <aside class="pi-card">
+      <p class="role">Lab Lead</p>
+      <h3>Dr. Ravi Anand</h3>
+      <p class="affil">Assistant Professor, Computer Science<br>IIIT Delhi</p>
+      <p>
+        Ph.D., IIT Kharagpur (2021). Works on classical and quantum cryptanalysis of
+        symmetric ciphers, cipher design, and machine learning applied to cryptanalysis.
+      </p>
+      <div class="link-row">
+        <a class="chip" href="https://iiitd.ac.in/ravianand" target="_blank" rel="noopener">IIITD Profile</a>
+        <a class="chip" href="https://scholar.google.com/citations?user=ZB6aUc0AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="chip" href="https://dblp.org/pid/203/4259.html" target="_blank" rel="noopener">DBLP</a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ============ SELECTED PUBLICATIONS ============ -->
+<section class="section">
+  <div class="shell">
+
+    <div class="section-head">
+      <div class="rule"></div>
+      <p class="eyebrow">Selected work</p>
+      <h2>Publications</h2>
+      <p>A few recent results. The complete list lives on DBLP and Google Scholar.</p>
+    </div>
+
+    <!--
+      TODO (Ravi): replace these three entries with real papers.
+      Pattern for each item:
+        <li>
+          <span class="pub-title">Paper title</span>
+          <span class="pub-meta"><span class="venue">VENUE YEAR</span>Author One, Author Two, Author Three</span>
+        </li>
+    -->
+    <ul class="pub-list">
+      <li>
+        <span class="pub-title">Add your first selected paper here</span>
+        <span class="pub-meta"><span class="venue">Venue Year</span>Author list</span>
+      </li>
+      <li>
+        <span class="pub-title">Add your second selected paper here</span>
+        <span class="pub-meta"><span class="venue">Venue Year</span>Author list</span>
+      </li>
+      <li>
+        <span class="pub-title">Add your third selected paper here</span>
+        <span class="pub-meta"><span class="venue">Venue Year</span>Author list</span>
+      </li>
+    </ul>
+
+    <a class="btn btn-solid" href="https://dblp.org/pid/203/4259.html" target="_blank" rel="noopener">
+      View full publication list
+    </a>
+
+  </div>
+</section>
+
+<!-- ============ JOIN US ============ -->
+<section class="section dark" id="join">
+  <div class="shell join">
+
+    <div>
+      <p class="eyebrow on-dark">Openings</p>
+      <h2>Join the lab</h2>
+      <p>
+        We are always glad to hear from people who want to work on symmetric-key
+        cryptanalysis, quantum attacks, or machine learning for cryptography. A strong
+        grounding in mathematics or programming matters more than prior exposure to
+        cryptography — that part we can teach.
+      </p>
+
+      <ul class="join-points">
+        <li>PhD students working on classical and quantum cryptanalysis</li>
+        <li>B.Tech / M.Tech project and thesis students at IIIT Delhi</li>
+        <li>Research assistants and summer interns from any institute</li>
+      </ul>
+    </div>
+
+    <div class="join-cta">
+      <p class="role">Get in touch</p>
+      <p>Send a short note about what you have worked on and what you would like to work on.</p>
+      <a class="btn btn-primary" href="mailto:ravi.anand@iiitd.ac.in">ravi.anand@iiitd.ac.in</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="shell">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo-mark.png" alt="">
+          <span>
+            <strong>Symmetric Cryptography Lab</strong>
+            <span class="brand-sub">IIIT Delhi</span>
+          </span>
+        </div>
+        <p>Design and security analysis of symmetric-key cryptographic primitives.</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>A-503, R&amp;D Block<br>IIIT Delhi, Okhla Phase III<br>New Delhi 110020, India</p>
+        <p><a href="mailto:ravi.anand@iiitd.ac.in" style="color:#b9c2d6">ravi.anand@iiitd.ac.in</a></p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="team.html">Team</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://iiitd.ac.in" target="_blank" rel="noopener">IIIT Delhi</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Symmetric Cryptography Lab, IIIT Delhi</span>
+      <span>सममित कूटलेखन अनुसंधान प्रकोष्ठ</span>
+    </div>
+
+  </div>
 </footer>
 
 </body>
