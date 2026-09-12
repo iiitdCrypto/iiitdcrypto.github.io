@@ -419,26 +419,53 @@ h1, h2, h3 {
 .card-row .card-icon { flex: none; margin-bottom: 0; }
 .card-row h3 { margin-bottom: 6px; }
 
-/* ---------- AUTO-SCROLLING NEWS ---------- */
+/* ---------- WHITE PANEL (news, team lists) ---------- */
+.panel,
 .news-viewport {
-  position: relative;
-  flex: 0 1 auto;
-  max-height: 440px;   /* past this the list loops instead of growing the page */
-  overflow: hidden;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 6px 22px;
   box-shadow: 0 10px 28px rgba(12,20,40,.05);
-  --news-duration: 30s;
+}
+
+.news-viewport {
+  position: relative;
+  flex: 0 1 auto;
+  max-height: 440px;   /* past this the list loops instead of growing the page */
+  overflow: hidden;
+}
+
+/* manually scrollable panel — for lists people scan for a name */
+.panel {
+  max-height: 430px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #ddd8c9 transparent;
+}
+
+.panel::-webkit-scrollbar { width: 8px; }
+.panel::-webkit-scrollbar-track { background: transparent; }
+.panel::-webkit-scrollbar-thumb { background: #ddd8c9; border-radius: 8px; }
+.panel::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ---------- AUTO-SCROLL (opt in with data-autoscroll) ----------
+   Add the data-autoscroll attribute to a .panel and it loops instead
+   of scrolling by hand. assets/site.js does the measuring.
+------------------------------------------------------------------ */
+[data-autoscroll] {
+  --scroll-duration: 30s;
+  position: relative;
+  overflow: hidden;
 }
 
 /* too few items to loop: the box simply sizes to its content */
-.news-viewport.is-static { max-height: none; padding: 4px 22px; }
+[data-autoscroll].is-static { max-height: none; padding: 4px 22px; }
 
 /* soft fade at the top and bottom edges, only while looping */
-.news-viewport.is-scrolling::before,
-.news-viewport.is-scrolling::after {
+[data-autoscroll].is-scrolling::before,
+[data-autoscroll].is-scrolling::after {
   content: "";
   position: absolute;
   left: 0; right: 0;
@@ -447,20 +474,20 @@ h1, h2, h3 {
   z-index: 2;
 }
 
-.news-viewport.is-scrolling::before { top: 0; background: linear-gradient(#fff, rgba(255,255,255,0)); }
-.news-viewport.is-scrolling::after  { bottom: 0; background: linear-gradient(rgba(255,255,255,0), #fff); }
+[data-autoscroll].is-scrolling::before { top: 0; background: linear-gradient(#fff, rgba(255,255,255,0)); }
+[data-autoscroll].is-scrolling::after  { bottom: 0; background: linear-gradient(rgba(255,255,255,0), #fff); }
 
-.news-viewport.is-scrolling .news-track {
-  animation: newsScroll var(--news-duration) linear infinite;
+[data-autoscroll].is-scrolling .scroll-track {
+  animation: autoScroll var(--scroll-duration) linear infinite;
   will-change: transform;
 }
 
-.news-viewport.is-scrolling:hover .news-track,
-.news-viewport.is-scrolling:focus-within .news-track {
+[data-autoscroll].is-scrolling:hover .scroll-track,
+[data-autoscroll].is-scrolling:focus-within .scroll-track {
   animation-play-state: paused;
 }
 
-@keyframes newsScroll {
+@keyframes autoScroll {
   from { transform: translateY(0); }
   to   { transform: translateY(-50%); }
 }
@@ -717,6 +744,74 @@ h1, h2, h3 {
   margin-top: 4px;
 }
 
+/* two equal columns, e.g. project students beside interns */
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.pair-col h3.col-title {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold-d);
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+
+/* ---------- LIST ENTRIES (projects, interns, alumni) ---------- */
+.entry-list { list-style: none; margin: 0; padding: 0; }
+
+.entry-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry-list li:last-child { border-bottom: 0; }
+
+.entry-title {
+  display: block;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: var(--green-d);
+  margin-bottom: 5px;
+}
+
+.entry-people {
+  display: block;
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.entry-meta {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* optional divider for grouping by year as the list grows */
+.entry-list .year {
+  padding: 14px 0 6px;
+  border-bottom: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold-d);
+}
+
+.entry-list .year:first-child { padding-top: 6px; }
+
 .profile-card {
   background: #fff;
   border: 1px solid var(--line);
@@ -791,6 +886,7 @@ h1, h2, h3 {
   .duo { grid-template-columns: 1fr; gap: 40px; }
   .news-viewport { max-height: 340px; }
   .join { grid-template-columns: 1fr; gap: 32px; }
+  .pair { grid-template-columns: 1fr; gap: 34px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
