@@ -90,13 +90,12 @@
           margin a design really has is to attack it.
         </p>
         <p class="framing">
-          We are interested in complete attacks rather than distinguishers that stop short
-          of key recovery, and in attack models that match what an adversary can actually do.
+          We are interested in complete attacks as well as distinguishers, and in attack models that match what an adversary can actually do.
         </p>
 
         <p class="threads-label">Current threads</p>
         <ul class="threads">
-          <li><strong>Automated trail search.</strong> Finding differential and linear characteristics with solver-based methods rather than by hand, so the search covers cases intuition would skip.</li>
+          <!-- <li><strong>Automated trail search.</strong> Finding differential and linear characteristics with solver-based methods rather than by hand, so the search covers cases intuition would skip.</li> -->
           <li><strong>Fault attacks under realistic models.</strong> Differential fault analysis where the injection assumptions reflect what is achievable on a device, not what is convenient for the analysis.</li>
           <li><strong>Structural attacks on Feistel constructions.</strong> Algebraic and meet-in-the-middle techniques against generalized Feistel networks, and how the attacks scale with the number of branches.</li>
           <li><strong>The real cost of brute force.</strong> Benchmarking exhaustive key search on GPUs across a range of symmetric ciphers, to put a measured number under the phrase "computationally infeasible".</li>
@@ -126,7 +125,7 @@
           <li><strong>Circuit-level resource estimates.</strong> Grover- and Simon-based attacks accounted honestly, without assuming unit-cost quantum RAM.</li>
           <li><strong>The query-access boundary.</strong> Which attacks survive when the adversary has only classical access to the primitive, rather than superposition queries.</li>
           <li><strong>Quantum time–memory–data tradeoffs.</strong> What the classical tradeoff curves for stream ciphers become once the search step is quantum.</li>
-          <li><strong>Quantum differential-linear cryptanalysis.</strong> Lifting differential-linear and higher-order differential-linear techniques into the quantum setting, and finding where the speedup genuinely applies.</li>
+          <li><strong>Quantumization of classical cryptanalysis.</strong> Lifting classical cryptanalysis techniques into the quantum setting, and finding where the speedup genuinely applies.</li>
         </ul>
       </article>
 
@@ -175,7 +174,7 @@
 
         <p class="threads-label">Current threads</p>
         <ul class="threads">
-          <li><strong>From distinguisher to key recovery.</strong> Building complete attacks on top of learned distinguishers rather than stopping at the distinguishing advantage.</li>
+          <li><strong>From distinguisher to key recovery.</strong> Building complete attacks on top of learned distinguishers.</li>
           <li><strong>Localising key dependence.</strong> Working out which key bits a learned distinguisher is actually sensitive to, and using that to narrow the search.</li>
           <li><strong>Learning-guided fault analysis.</strong> Searching for effective fault strategies automatically instead of designing each one by hand.</li>
           <li><strong>Interpretability.</strong> Extracting a classical explanation from a trained model, so a result is understood and not just observed.</li>
