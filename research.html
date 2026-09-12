@@ -88,15 +88,15 @@
             someone finds the structure that breaks it, and the only way to know how much
             margin a design really has is to attack it.
           </p>
-          <p class="framing">
+          <!-- <p class="framing">
             We are interested in complete attacks rather than distinguishers that stop short
             of key recovery, and in attack models that match what an adversary can actually do.
-          </p>
+          </p> -->
 
           <p class="threads-label">Current threads</p>
           <ul class="threads">
-            <li><strong>Automated trail search.</strong> Finding differential and linear characteristics with solver-based methods rather than by hand, so the search covers cases intuition would skip.</li>
-            <li><strong>Fault attacks under realistic models.</strong> Differential fault analysis where the injection assumptions reflect what is achievable on a device, not what is convenient for the analysis.</li>
+            <!-- <li><strong>Automated trail search.</strong> Finding differential and linear characteristics with solver-based methods rather than by hand, so the search covers cases intuition would skip.</li> -->
+            <li><strong>Fault attacks under realistic models.</strong> Differential fault analysis where the injection assumptions reflect what is achievable on a device.</li>
             <li><strong>Structural attacks on Feistel constructions.</strong> Algebraic and meet-in-the-middle techniques against generalized Feistel networks, and how the attacks scale with the number of branches.</li>
             <li><strong>The real cost of brute force.</strong> Benchmarking exhaustive key search on GPUs across a range of symmetric ciphers, to put a measured number under the phrase "computationally infeasible".</li>
           </ul>
@@ -124,17 +124,17 @@
             has a gate count, a depth, a qubit budget, and a set of memory assumptions — and
             those are what decide whether it is a threat.
           </p>
-          <p class="framing">
+          <!-- <p class="framing">
             Our position is that quantum attacks should be costed at circuit level, without
             granting the adversary free quantum memory access.
-          </p>
+          </p> -->
 
           <p class="threads-label">Current threads</p>
           <ul class="threads">
             <li><strong>Circuit-level resource estimates.</strong> Grover- and Simon-based attacks accounted honestly, without assuming unit-cost quantum RAM.</li>
             <li><strong>The query-access boundary.</strong> Which attacks survive when the adversary has only classical access to the primitive, rather than superposition queries.</li>
             <li><strong>Quantum time–memory–data tradeoffs.</strong> What the classical tradeoff curves for stream ciphers become once the search step is quantum.</li>
-            <li><strong>Quantum differential-linear cryptanalysis.</strong> Lifting differential-linear and higher-order differential-linear techniques into the quantum setting, and finding where the speedup genuinely applies.</li>
+            <li><strong>Quantumization of classical cryptanalysis.</strong> Lifting classical cryptanalysis techniques into the quantum setting, and finding where the speedup genuinely applies.</li>
           </ul>
         </div>
       </article>
@@ -154,13 +154,14 @@
           <p class="framing">
             Homomorphic encryption and secure multi-party computation changed what makes a
             cipher cheap. Multiplicative depth and the number of nonlinear operations now
-            dominate the cost, where gate count and table lookups once did.
+            dominate the cost, where gate count and table lookups once did. That shift 
+            produced a family of new primitives, many defined over prime fields,
+            whose security is far less settled than that of a cipher like AES.
           </p>
-          <p class="framing">
-            That shift produced a family of new primitives, many defined over prime fields,
-            whose security is far less settled than that of a cipher like AES. Both halves of
+          <!-- <p class="framing">
+             Both halves of
             that — building them and breaking them — are open.
-          </p>
+          </p> -->
 
           <p class="threads-label">Current threads</p>
           <ul class="threads">
@@ -187,12 +188,13 @@
           <p class="framing">
             In some settings a neural network separates cipher output from random better than
             the best hand-built distinguisher. The interesting question is not that this works
-            but what the network has found.
+            but what the network has found. We are trying to turn learned distinguishers into 
+            full key-recovery attacks
           </p>
-          <p class="framing">
+          <!-- <p class="framing">
             We care about turning learned distinguishers into full key-recovery attacks, and
             about reading back the structure they rely on in terms a cryptanalyst can state.
-          </p>
+          </p> -->
 
           <p class="threads-label">Current threads</p>
           <ul class="threads">
