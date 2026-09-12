@@ -69,4 +69,50 @@
     clearTimeout(timer);
     timer = setTimeout(runAll, 200);
   });
+
+  /* ----------------------------------------------------------------
+     Section rail (research page): highlight the link whose section
+     is currently in view. Falls back to doing nothing on old browsers.
+  ---------------------------------------------------------------- */
+  function initRail() {
+    var links = document.querySelectorAll('[data-spy-link]');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+
+    var byId = {};
+    var sections = [];
+
+    for (var i = 0; i < links.length; i++) {
+      var id = (links[i].getAttribute('href') || '').replace('#', '');
+      var section = id && document.getElementById(id);
+      if (!section) continue;
+      byId[id] = links[i];
+      sections.push(section);
+    }
+    if (!sections.length) return;
+
+    function activate(id) {
+      for (var key in byId) {
+        if (Object.prototype.hasOwnProperty.call(byId, key)) {
+          byId[key].classList.toggle('is-active', key === id);
+        }
+      }
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      var best = null;
+      entries.forEach(function (e) {
+        if (e.isIntersecting && (!best || e.intersectionRatio > best.intersectionRatio)) best = e;
+      });
+      if (best) activate(best.target.id);
+    }, { rootMargin: '-84px 0px -55% 0px', threshold: [0, 0.25, 0.6] });
+
+    sections.forEach(function (s) { observer.observe(s); });
+    activate(sections[0].id);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRail);
+  } else {
+    initRail();
+  }
 })();
