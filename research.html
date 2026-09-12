@@ -55,134 +55,238 @@
 
 <!-- ============ AREAS ============ -->
 <!--
-  Each area: a framing paragraph, then the threads currently being pulled on.
-  The left rail highlights whichever area is in view (assets/site.js).
-  To add an area, copy an <article class="area"> block and add a matching
-  <li> to the rail — the id and the href must match.
+  Four fixed-height boxes. The heading stays put and the body scrolls,
+  so adding threads never lengthens the page.
+  To add an area, copy one <article class="area-box"> block.
 -->
 <section class="section">
-  <div class="shell research-layout">
+  <div class="shell">
 
-    <!-- STICKY RAIL -->
-    <nav class="rail" aria-label="Research areas">
-      <h4>Areas</h4>
-      <ol>
-        <li><a href="#classical" data-spy-link>Classical Cryptanalysis</a></li>
-        <li><a href="#quantum" data-spy-link>Quantum Cryptanalysis</a></li>
-        <li><a href="#design" data-spy-link>Design of Symmetric Ciphers</a></li>
-        <li><a href="#ml" data-spy-link>Machine Learning for Cryptanalysis</a></li>
-      </ol>
-    </nav>
+    <div class="section-head">
+      <div class="rule"></div>
+      <p class="eyebrow">What we work on</p>
+      <h2>Research Areas</h2>
+      <p>Four threads that run through most of what the lab does. Scroll inside a box to read the current work.</p>
+    </div>
 
-    <!-- CONTENT -->
-    <div>
+    <div class="area-grid">
 
       <!-- 1 -->
-      <article class="area" id="classical">
-        <div class="area-head">
-          <span class="area-num">01</span>
-          <h2>Classical Cryptanalysis</h2>
+      <article class="area-box">
+        <div class="area-box-head">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="12" r="4"/><path d="M12 12h9"/><path d="M17 12v4"/><path d="M20.5 12v3"/>
+            </svg>
+          </div>
+          <h3>Classical Cryptanalysis</h3>
         </div>
 
-        <p class="framing">
-          The security of a block or stream cipher is an empirical claim. It holds until
-          someone finds the structure that breaks it, and the only way to know how much
-          margin a design really has is to attack it.
-        </p>
-        <!-- <p class="framing">
-          We are interested in complete attacks as well as distinguishers, and in attack models that match what an adversary can actually do.
-        </p> -->
+        <div class="area-scroll">
+          <p class="framing">
+            The security of a block or stream cipher is an empirical claim. It holds until
+            someone finds the structure that breaks it, and the only way to know how much
+            margin a design really has is to attack it.
+          </p>
+          <p class="framing">
+            We are interested in complete attacks rather than distinguishers that stop short
+            of key recovery, and in attack models that match what an adversary can actually do.
+          </p>
 
-        <p class="threads-label">Current threads</p>
-        <ul class="threads">
-          <!-- <li><strong>Automated trail search.</strong> Finding differential and linear characteristics with solver-based methods rather than by hand, so the search covers cases intuition would skip.</li> -->
-          <li><strong>Fault attacks under realistic models.</strong> Differential fault analysis where the injection assumptions reflect what is achievable on a device, not what is convenient for the analysis.</li>
-          <li><strong>Structural attacks on Feistel constructions.</strong> Algebraic and meet-in-the-middle techniques against generalized Feistel networks, and how the attacks scale with the number of branches.</li>
-          <li><strong>The real cost of brute force.</strong> Benchmarking exhaustive key search on GPUs across a range of symmetric ciphers, to put a measured number under the phrase "computationally infeasible".</li>
-        </ul>
+          <p class="threads-label">Current threads</p>
+          <ul class="threads">
+            <li><strong>Automated trail search.</strong> Finding differential and linear characteristics with solver-based methods rather than by hand, so the search covers cases intuition would skip.</li>
+            <li><strong>Fault attacks under realistic models.</strong> Differential fault analysis where the injection assumptions reflect what is achievable on a device, not what is convenient for the analysis.</li>
+            <li><strong>Structural attacks on Feistel constructions.</strong> Algebraic and meet-in-the-middle techniques against generalized Feistel networks, and how the attacks scale with the number of branches.</li>
+            <li><strong>The real cost of brute force.</strong> Benchmarking exhaustive key search on GPUs across a range of symmetric ciphers, to put a measured number under the phrase "computationally infeasible".</li>
+          </ul>
+        </div>
       </article>
 
       <!-- 2 -->
-      <article class="area" id="quantum">
-        <div class="area-head">
-          <span class="area-num">02</span>
-          <h2>Quantum Cryptanalysis</h2>
+      <article class="area-box">
+        <div class="area-box-head">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="2.2"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.4"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.4" transform="rotate(60 12 12)"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4.4" transform="rotate(120 12 12)"/>
+            </svg>
+          </div>
+          <h3>Quantum Cryptanalysis</h3>
         </div>
 
-        <p class="framing">
-          Grover's algorithm is usually quoted as halving the security of a symmetric cipher.
-          That figure is an asymptotic bound, not a cost. Written out as a circuit, an attack
-          has a gate count, a depth, a qubit budget, and a set of memory assumptions — and
-          those are what decide whether it is a threat.
-        </p>
-        <!-- <p class="framing">
-          Our position is that quantum attacks should be costed at circuit level, without
-          granting the adversary free quantum memory access.
-        </p> -->
+        <div class="area-scroll">
+          <p class="framing">
+            Grover's algorithm is usually quoted as halving the security of a symmetric cipher.
+            That figure is an asymptotic bound, not a cost. Written out as a circuit, an attack
+            has a gate count, a depth, a qubit budget, and a set of memory assumptions — and
+            those are what decide whether it is a threat.
+          </p>
+          <p class="framing">
+            Our position is that quantum attacks should be costed at circuit level, without
+            granting the adversary free quantum memory access.
+          </p>
 
-        <p class="threads-label">Current threads</p>
-        <ul class="threads">
-          <li><strong>Circuit-level resource estimates.</strong> Grover- and Simon-based attacks accounted honestly, without assuming unit-cost quantum RAM.</li>
-          <li><strong>The query-access boundary.</strong> Which attacks survive when the adversary has only classical access to the primitive, rather than superposition queries.</li>
-          <li><strong>Quantum time–memory–data tradeoffs.</strong> What the classical tradeoff curves for stream ciphers become once the search step is quantum.</li>
-          <li><strong>Quantumization of classical cryptanalysis.</strong> Lifting classical cryptanalysis techniques into the quantum setting, and finding where the speedup genuinely applies.</li>
-        </ul>
+          <p class="threads-label">Current threads</p>
+          <ul class="threads">
+            <li><strong>Circuit-level resource estimates.</strong> Grover- and Simon-based attacks accounted honestly, without assuming unit-cost quantum RAM.</li>
+            <li><strong>The query-access boundary.</strong> Which attacks survive when the adversary has only classical access to the primitive, rather than superposition queries.</li>
+            <li><strong>Quantum time–memory–data tradeoffs.</strong> What the classical tradeoff curves for stream ciphers become once the search step is quantum.</li>
+            <li><strong>Quantum differential-linear cryptanalysis.</strong> Lifting differential-linear and higher-order differential-linear techniques into the quantum setting, and finding where the speedup genuinely applies.</li>
+          </ul>
+        </div>
       </article>
 
       <!-- 3 -->
-      <article class="area" id="design">
-        <div class="area-head">
-          <span class="area-num">03</span>
-          <h2>Design of Symmetric Ciphers</h2>
+      <article class="area-box">
+        <div class="area-box-head">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.5 21 7l-9 4.5L3 7z"/><path d="M3 12l9 4.5L21 12"/><path d="M3 17l9 4.5L21 17"/>
+            </svg>
+          </div>
+          <h3>Design of Symmetric Ciphers</h3>
         </div>
 
-        <p class="framing">
-          Homomorphic encryption and secure multi-party computation changed what makes a
-          cipher cheap. Multiplicative depth and the number of nonlinear operations now
-          dominate the cost, where gate count and table lookups once did. That shift produced a family of new primitives, many defined over prime fields,
-          whose security is far less settled than that of a cipher like AES.
-        </p>
-        <!-- <p class="framing">
-          That shift produced a family of new primitives, many defined over prime fields,
-          whose security is far less settled than that of a cipher like AES. Both halves of
-          that — building them and breaking them — are open.
-        </p> -->
+        <div class="area-scroll">
+          <p class="framing">
+            Homomorphic encryption and secure multi-party computation changed what makes a
+            cipher cheap. Multiplicative depth and the number of nonlinear operations now
+            dominate the cost, where gate count and table lookups once did.
+          </p>
+          <p class="framing">
+            That shift produced a family of new primitives, many defined over prime fields,
+            whose security is far less settled than that of a cipher like AES. Both halves of
+            that — building them and breaking them — are open.
+          </p>
 
-        <p class="threads-label">Current threads</p>
-        <ul class="threads">
-          <li><strong>Low-depth constructions.</strong> Block and stream cipher designs for FHE- and MPC-friendly settings, where multiplicative depth is the budget that matters.</li>
-          <li><strong>Arithmetization-oriented primitives.</strong> Security analysis of ciphers defined over prime fields, where the usual binary-field intuitions do not transfer.</li>
-          <li><strong>Mapping the fault surface.</strong> Systematising how fault attacks behave against this family, which responds quite differently from conventional designs.</li>
-        </ul>
+          <p class="threads-label">Current threads</p>
+          <ul class="threads">
+            <li><strong>Low-depth constructions.</strong> Block and stream cipher designs for FHE- and MPC-friendly settings, where multiplicative depth is the budget that matters.</li>
+            <li><strong>Arithmetization-oriented primitives.</strong> Security analysis of ciphers defined over prime fields, where the usual binary-field intuitions do not transfer.</li>
+            <li><strong>Mapping the fault surface.</strong> Systematising how fault attacks behave against this family, which responds quite differently from conventional designs.</li>
+          </ul>
+        </div>
       </article>
 
       <!-- 4 -->
-      <article class="area" id="ml">
-        <div class="area-head">
-          <span class="area-num">04</span>
-          <h2>Machine Learning for Cryptanalysis</h2>
+      <article class="area-box">
+        <div class="area-box-head">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="7" r="2"/><circle cx="19" cy="17" r="2"/>
+              <path d="M7 6.6 10.2 11M7 17.4 10.2 13M14 11.3 17.1 7.8M14 12.8 17.1 16.2"/>
+            </svg>
+          </div>
+          <h3>Machine Learning for Cryptanalysis</h3>
         </div>
 
-        <p class="framing">
-          In some settings a neural network separates cipher output from random better than
-          the best hand-built distinguisher. The interesting question is not that this works
-          but what the network has found.
-        </p>
-        <!-- <p class="framing">
-          We care about turning learned distinguishers into full key-recovery attacks, and
-          about reading back the structure they rely on in terms a cryptanalyst can state.
-        </p> -->
+        <div class="area-scroll">
+          <p class="framing">
+            In some settings a neural network separates cipher output from random better than
+            the best hand-built distinguisher. The interesting question is not that this works
+            but what the network has found.
+          </p>
+          <p class="framing">
+            We care about turning learned distinguishers into full key-recovery attacks, and
+            about reading back the structure they rely on in terms a cryptanalyst can state.
+          </p>
 
-        <p class="threads-label">Current threads</p>
-        <ul class="threads">
-          <li><strong>From distinguisher to key recovery.</strong> Building complete attacks on top of learned distinguishers.</li>
-          <li><strong>Localising key dependence.</strong> Working out which key bits a learned distinguisher is actually sensitive to, and using that to narrow the search.</li>
-          <li><strong>Learning-guided fault analysis.</strong> Searching for effective fault strategies automatically instead of designing each one by hand.</li>
-          <li><strong>Interpretability.</strong> Extracting a classical explanation from a trained model, so a result is understood and not just observed.</li>
-        </ul>
+          <p class="threads-label">Current threads</p>
+          <ul class="threads">
+            <li><strong>From distinguisher to key recovery.</strong> Building complete attacks on top of learned distinguishers rather than stopping at the distinguishing advantage.</li>
+            <li><strong>Localising key dependence.</strong> Working out which key bits a learned distinguisher is actually sensitive to, and using that to narrow the search.</li>
+            <li><strong>Do learned features compose?</strong> Testing whether representations learned at one round transfer to another, and when the Markovian composition assumed by classical differential analysis breaks down.</li>
+            <li><strong>Learning-guided fault analysis.</strong> Searching for effective fault strategies automatically instead of designing each one by hand.</li>
+            <li><strong>Interpretability.</strong> Extracting a classical explanation from a trained model, so a result is understood and not just observed.</li>
+          </ul>
+        </div>
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<!--
+  Each paper is a <details> element — click the row to expand the abstract.
+  No JavaScript involved; it works with the keyboard and without JS.
+
+  To add a paper, copy one block:
+
+    <details class="pub-item">
+      <summary>
+        <div>
+          <div class="pub-badges">
+            <span class="venue">VENUE YEAR</span>
+            <span class="status">Accepted</span>      (the status badge is optional)
+          </div>
+          <span class="pub-title">Title</span>
+          <span class="pub-authors">Author One, Author Two</span>
+        </div>
+        <span class="pub-chevron" aria-hidden="true">▸</span>
+      </summary>
+      <div class="pub-abstract">
+        <h4>Abstract</h4>
+        <p>...</p>
+      </div>
+    </details>
+-->
+<section class="section tinted">
+  <div class="shell">
+
+    <div class="section-head">
+      <div class="rule"></div>
+      <p class="eyebrow">Output</p>
+      <h2>Publications</h2>
+      <p>Click a paper to read its abstract.</p>
+    </div>
+
+    <details class="pub-item">
+      <summary>
+        <div>
+          <div class="pub-badges">
+            <span class="venue">CANS 2026</span>
+            <span class="status">Accepted</span>
+          </div>
+          <span class="pub-title">Markov Structure and Feature Compositionality: Limits of Cross-Round Neural Transfer in Lightweight Ciphers</span>
+          <span class="pub-authors">Angadjeet, Apaar, Aniket, Parth</span>
+        </div>
+        <span class="pub-chevron" aria-hidden="true">▸</span>
+      </summary>
+
+      <div class="pub-abstract">
+        <h4>Abstract</h4>
+        <p>
+          Neural distinguishers have surpassed classical methods on round-reduced block
+          ciphers, yet whether their learned representations obey the Markovian composition
+          assumed by classical differential analysis remains unknown, with direct implications
+          for the scalability of neural key-recovery attacks and the reliable evaluation of
+          cipher security margins. We hypothesize that the answer is architecture-dependent:
+          ciphers whose round functions preserve monotone differential bias signs across rounds
+          support positive cross-round transfer, while those that violate this condition induce
+          systematic failure. To test this, we conduct controlled cross-round transfer
+          experiments on three cipher families, Speck32/64 (ARX), Simon32/64 (Feistel), and
+          Present (SPN), spanning seven architectures, and prove a Markov-Transfer theorem
+          showing that positive transfer is guaranteed under independent round keys when a
+          distinguisher uses only DDT features and per-bit biases preserve sign across rounds.
+          Across these architectures, SPN ciphers satisfy the theorem's conditions and exhibit
+          near-perfect positive transfer, while Feistel and ARX ciphers systematically violate
+          the monotone bias condition. We trace Simon32/64's violation to the AND gate's
+          data-dependent differential propagation, which causes bias-sign oscillation across
+          rounds and produces a phenomenon we term anti-transfer, wherein models trained at
+          higher rounds perform significantly below chance on lower-round data. Conditional
+          mutual information estimation and VAE-based Markov tests confirm that the cipher
+          itself is memoryless, establishing that non-monotonic behavior arises from the neural
+          representation interacting with the round function structure rather than from any
+          violation of the cipher's Markov properties. These findings have implications for
+          neural key-recovery strategies and for lightweight cipher design.
+        </p>
+      </div>
+    </details>
+
   </div>
 </section>
 
