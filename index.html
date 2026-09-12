@@ -164,12 +164,12 @@
       </div>
 
       <!--
-        The list scrolls by itself once there are more items than fit the box
-        (roughly six or more). With fewer, it simply sits still. Hovering pauses it.
+        Loops by itself once the list is taller than the box (roughly 8+ items);
+        below that it sits still. Hovering pauses it. See assets/site.js.
         TODO (Ravi): replace the two placeholder entries below with real items.
       -->
-      <div class="news-viewport" id="newsViewport">
-        <div class="news-track">
+      <div class="news-viewport" data-autoscroll>
+        <div class="scroll-track" data-autoscroll-track>
           <ul class="news-list">
             <li>
               <span class="news-date">Mar 2026</span>
@@ -279,48 +279,7 @@
   </div>
 </footer>
 
-<!-- Auto-scroll the news list only when it actually overflows its box. -->
-<script>
-(function () {
-  var vp = document.getElementById('newsViewport');
-  if (!vp) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  function setup() {
-    var track = vp.querySelector('.news-track');
-    var list  = track.querySelector('.news-list');
-    if (!list) return;
-
-    vp.classList.remove('is-scrolling', 'is-static');
-    var extra = track.querySelector('.news-list[data-clone]');
-    if (extra) track.removeChild(extra);
-
-    // only loop if the content is meaningfully taller than the window;
-    // otherwise let the box shrink to fit instead of showing empty space
-    if (list.scrollHeight <= vp.clientHeight + 16) {
-      vp.classList.add('is-static');
-      return;
-    }
-
-    var clone = list.cloneNode(true);
-    clone.setAttribute('data-clone', '');
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
-
-    var seconds = Math.max(18, Math.round(list.scrollHeight / 20));
-    vp.style.setProperty('--news-duration', seconds + 's');
-    vp.classList.add('is-scrolling');
-  }
-
-  setup();
-
-  var t;
-  window.addEventListener('resize', function () {
-    clearTimeout(t);
-    t = setTimeout(setup, 200);
-  });
-})();
-</script>
+<script src="assets/site.js" defer></script>
 
 </body>
 </html>
