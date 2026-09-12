@@ -91,53 +91,74 @@
   </div>
 </section>
 
-<!-- ============ PROJECT STUDENTS ============ -->
+<!-- ============ PROJECTS + INTERNS (one row, scrollable lists) ============ -->
+<!--
+  Each column is a .panel: it scrolls inside its own box once the list grows
+  past ~430px, so adding years of entries never lengthens the page.
+
+  To add an entry, copy one <li> block. To group by year as the list grows,
+  drop in a divider:   <li class="year">2026</li>
+
+  To make a column loop by itself instead of scrolling by hand, add
+  data-autoscroll to the .panel div — the markup is already set up for it.
+-->
 <section class="section tinted">
   <div class="shell">
     <div class="section-head">
       <div class="rule"></div>
-      <h2>Project Students</h2>
+      <h2>Projects &amp; Interns</h2>
     </div>
 
-    <div class="grid-3">
+    <div class="pair">
 
-      <div class="profile-card">
-        <h3 class="project">Secure Platform for Communication</h3>
-        <p>Piyush Aggarwal, Aditya Singh, Arvind Dhavala</p>
-        <p>IIIT Delhi · 3rd Year</p>
+      <!-- LEFT: project students -->
+      <div class="pair-col">
+        <h3 class="col-title">Project Students</h3>
+
+        <div class="panel">
+          <div class="scroll-track" data-autoscroll-track>
+            <ul class="entry-list">
+
+              <li>
+                <span class="entry-title">Secure Platform for Communication</span>
+                <span class="entry-people">Piyush Aggarwal, Aditya Singh, Arvind Dhavala</span>
+                <span class="entry-meta">IIIT Delhi · 3rd Year</span>
+              </li>
+
+              <li>
+                <span class="entry-title">Machine Learning based Identification of Classical Symmetric Ciphers</span>
+                <span class="entry-people">Md. Kaif, Maulik Mahey, Sweta Snighdha, Dhruv Verma</span>
+                <span class="entry-meta">IIIT Delhi · 4th Year</span>
+              </li>
+
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="profile-card">
-        <h3 class="project">Machine Learning based Identification of Classical Symmetric Ciphers</h3>
-        <p>Md. Kaif, Maulik Mahey, Sweta Snighdha, Dhruv Verma</p>
-        <p>IIIT Delhi · 4th Year</p>
-      </div>
+      <!-- RIGHT: IPs, RAs and interns -->
+      <div class="pair-col">
+        <h3 class="col-title">IPs / RAs / Interns</h3>
 
-    </div>
-  </div>
-</section>
+        <div class="panel">
+          <div class="scroll-track" data-autoscroll-track>
+            <ul class="entry-list">
 
-<!-- ============ IPs / RAs / INTERNS ============ -->
-<section class="section">
-  <div class="shell">
-    <div class="section-head">
-      <div class="rule"></div>
-      <h2>IPs / RAs / Interns</h2>
-    </div>
+              <li>
+                <span class="entry-title">IP: Performance Evaluation of Symmetric Ciphers on GPUs</span>
+                <span class="entry-people">Sneha Agarwal · Aditya Gupta · Sahil Gupta</span>
+                <span class="entry-meta">IIIT Delhi · 4th Year</span>
+              </li>
 
-    <div class="grid-3">
+              <li>
+                <span class="entry-title">Internship: Introduction to Quantum Cryptanalysis</span>
+                <span class="entry-people">Debasmi Basu</span>
+                <span class="entry-meta">DU · 2nd Year</span>
+              </li>
 
-      <div class="profile-card">
-        <h3 class="project">IP: Performance Evaluation of Symmetric Ciphers on GPUs</h3>
-        <p>Sneha Agarwal</p>
-        <p>Aditya Gupta, Sahil Gupta</p>
-        <p>IIIT Delhi · 4th Year</p>
-      </div>
-
-      <div class="profile-card">
-        <h3 class="project">Internship: Introduction to Quantum Cryptanalysis</h3>
-        <p>Debasmi Basu</p>
-        <p>DU · 2nd Year</p>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -145,7 +166,7 @@
 </section>
 
 <!-- ============ COLLABORATORS ============ -->
-<section class="section tinted">
+<section class="section">
   <div class="shell">
     <div class="section-head">
       <div class="rule"></div>
@@ -225,6 +246,8 @@
 
   </div>
 </footer>
+
+<script src="assets/site.js" defer></script>
 
 </body>
 </html>
