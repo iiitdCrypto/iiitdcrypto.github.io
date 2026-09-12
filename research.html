@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research — Symmetric Cryptography Lab, IIIT Delhi</title>
+  <meta name="description" content="Research at the Symmetric Cryptography Lab, IIIT Delhi: classical cryptanalysis, quantum cryptanalysis at circuit level, design of FHE- and MPC-friendly symmetric ciphers, and machine learning for cryptanalysis.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-mark.png" alt="">
+      <span class="brand-text">
+        <span class="brand-name">Symmetric Cryptography Lab</span>
+        <span class="brand-sub">IIIT Delhi</span>
+      </span>
+    </a>
+
+    <input type="checkbox" id="navToggle" class="nav-toggle">
+    <label for="navToggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="research.html" aria-current="page">Research</a></li>
+      <!-- <li><a href="publications.html">Publications</a></li> -->
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ PAGE TITLE ============ -->
+<section class="page-title">
+  <div class="shell">
+    <h1>Research</h1>
+    <p>What we work on, and the questions behind it.</p>
+  </div>
+</section>
+
+<!-- ============ AREAS ============ -->
+<!--
+  Each area: a framing paragraph, then the threads currently being pulled on.
+  The left rail highlights whichever area is in view (assets/site.js).
+  To add an area, copy an <article class="area"> block and add a matching
+  <li> to the rail — the id and the href must match.
+-->
+<section class="section">
+  <div class="shell research-layout">
+
+    <!-- STICKY RAIL -->
+    <nav class="rail" aria-label="Research areas">
+      <h4>Areas</h4>
+      <ol>
+        <li><a href="#classical" data-spy-link>Classical Cryptanalysis</a></li>
+        <li><a href="#quantum" data-spy-link>Quantum Cryptanalysis</a></li>
+        <li><a href="#design" data-spy-link>Design of Symmetric Ciphers</a></li>
+        <li><a href="#ml" data-spy-link>Machine Learning for Cryptanalysis</a></li>
+      </ol>
+    </nav>
+
+    <!-- CONTENT -->
+    <div>
+
+      <!-- 1 -->
+      <article class="area" id="classical">
+        <div class="area-head">
+          <span class="area-num">01</span>
+          <h2>Classical Cryptanalysis</h2>
+        </div>
+
+        <p class="framing">
+          The security of a block or stream cipher is an empirical claim. It holds until
+          someone finds the structure that breaks it, and the only way to know how much
+          margin a design really has is to attack it.
+        </p>
+        <p class="framing">
+          We are interested in complete attacks rather than distinguishers that stop short
+          of key recovery, and in attack models that match what an adversary can actually do.
+        </p>
+
+        <p class="threads-label">Current threads</p>
+        <ul class="threads">
+          <li><strong>Automated trail search.</strong> Finding differential and linear characteristics with solver-based methods rather than by hand, so the search covers cases intuition would skip.</li>
+          <li><strong>Fault attacks under realistic models.</strong> Differential fault analysis where the injection assumptions reflect what is achievable on a device, not what is convenient for the analysis.</li>
+          <li><strong>Structural attacks on Feistel constructions.</strong> Algebraic and meet-in-the-middle techniques against generalized Feistel networks, and how the attacks scale with the number of branches.</li>
+          <li><strong>The real cost of brute force.</strong> Benchmarking exhaustive key search on GPUs across a range of symmetric ciphers, to put a measured number under the phrase "computationally infeasible".</li>
+        </ul>
+      </article>
+
+      <!-- 2 -->
+      <article class="area" id="quantum">
+        <div class="area-head">
+          <span class="area-num">02</span>
+          <h2>Quantum Cryptanalysis</h2>
+        </div>
+
+        <p class="framing">
+          Grover's algorithm is usually quoted as halving the security of a symmetric cipher.
+          That figure is an asymptotic bound, not a cost. Written out as a circuit, an attack
+          has a gate count, a depth, a qubit budget, and a set of memory assumptions — and
+          those are what decide whether it is a threat.
+        </p>
+        <p class="framing">
+          Our position is that quantum attacks should be costed at circuit level, without
+          granting the adversary free quantum memory access.
+        </p>
+
+        <p class="threads-label">Current threads</p>
+        <ul class="threads">
+          <li><strong>Circuit-level resource estimates.</strong> Grover- and Simon-based attacks accounted honestly, without assuming unit-cost quantum RAM.</li>
+          <li><strong>The query-access boundary.</strong> Which attacks survive when the adversary has only classical access to the primitive, rather than superposition queries.</li>
+          <li><strong>Quantum time–memory–data tradeoffs.</strong> What the classical tradeoff curves for stream ciphers become once the search step is quantum.</li>
+          <li><strong>Quantum differential-linear cryptanalysis.</strong> Lifting differential-linear and higher-order differential-linear techniques into the quantum setting, and finding where the speedup genuinely applies.</li>
+        </ul>
+      </article>
+
+      <!-- 3 -->
+      <article class="area" id="design">
+        <div class="area-head">
+          <span class="area-num">03</span>
+          <h2>Design of Symmetric Ciphers</h2>
+        </div>
+
+        <p class="framing">
+          Homomorphic encryption and secure multi-party computation changed what makes a
+          cipher cheap. Multiplicative depth and the number of nonlinear operations now
+          dominate the cost, where gate count and table lookups once did.
+        </p>
+        <p class="framing">
+          That shift produced a family of new primitives, many defined over prime fields,
+          whose security is far less settled than that of a cipher like AES. Both halves of
+          that — building them and breaking them — are open.
+        </p>
+
+        <p class="threads-label">Current threads</p>
+        <ul class="threads">
+          <li><strong>Low-depth constructions.</strong> Block and stream cipher designs for FHE- and MPC-friendly settings, where multiplicative depth is the budget that matters.</li>
+          <li><strong>Arithmetization-oriented primitives.</strong> Security analysis of ciphers defined over prime fields, where the usual binary-field intuitions do not transfer.</li>
+          <li><strong>Mapping the fault surface.</strong> Systematising how fault attacks behave against this family, which responds quite differently from conventional designs.</li>
+        </ul>
+      </article>
+
+      <!-- 4 -->
+      <article class="area" id="ml">
+        <div class="area-head">
+          <span class="area-num">04</span>
+          <h2>Machine Learning for Cryptanalysis</h2>
+        </div>
+
+        <p class="framing">
+          In some settings a neural network separates cipher output from random better than
+          the best hand-built distinguisher. The interesting question is not that this works
+          but what the network has found.
+        </p>
+        <p class="framing">
+          We care about turning learned distinguishers into full key-recovery attacks, and
+          about reading back the structure they rely on in terms a cryptanalyst can state.
+        </p>
+
+        <p class="threads-label">Current threads</p>
+        <ul class="threads">
+          <li><strong>From distinguisher to key recovery.</strong> Building complete attacks on top of learned distinguishers rather than stopping at the distinguishing advantage.</li>
+          <li><strong>Localising key dependence.</strong> Working out which key bits a learned distinguisher is actually sensitive to, and using that to narrow the search.</li>
+          <li><strong>Learning-guided fault analysis.</strong> Searching for effective fault strategies automatically instead of designing each one by hand.</li>
+          <li><strong>Interpretability.</strong> Extracting a classical explanation from a trained model, so a result is understood and not just observed.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA ============ -->
+<section class="section dark">
+  <div class="shell">
+    <div class="cta-band">
+      <p class="eyebrow on-dark">Openings</p>
+      <h2>Interested in working on any of this?</h2>
+      <p>
+        We take PhD students, project and thesis students at IIIT Delhi, and interns
+        from any institute. A grounding in mathematics or programming matters more
+        than prior exposure to cryptography.
+      </p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="mailto:ravi.anand@iiitd.ac.in">ravi.anand@iiitd.ac.in</a>
+        <a class="btn btn-ghost" href="team.html">Meet the team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="shell">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo-mark.png" alt="">
+          <span>
+            <strong>Symmetric Cryptography Lab</strong>
+            <span class="brand-sub">IIIT Delhi</span>
+          </span>
+        </div>
+        <p>Design and security analysis of symmetric-key cryptographic primitives.</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>A-503, R&amp;D Block<br>IIIT Delhi, Okhla Phase III<br>New Delhi 110020, India</p>
+        <p><a href="mailto:ravi.anand@iiitd.ac.in" style="color:#b9c2d6">ravi.anand@iiitd.ac.in</a></p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="team.html">Team</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://iiitd.ac.in" target="_blank" rel="noopener">IIIT Delhi</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Symmetric Cryptography Lab, IIIT Delhi</span>
+      <span>सममित कूटलेखन अनुसंधान प्रकोष्ठ</span>
+    </div>
+
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+
+</body>
+</html>
